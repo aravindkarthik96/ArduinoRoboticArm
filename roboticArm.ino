@@ -51,7 +51,7 @@ void initArm(){
   armAngle(10);
   releaseObject();
 }
-s
+
 int echo(){
   long duration, distance;
   digitalWrite(trigPin, LOW);
