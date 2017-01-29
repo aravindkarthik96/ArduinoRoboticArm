@@ -23,26 +23,27 @@ void loop() {
 
 void moveArm(int rotation) {
   base.write(rotation);
-  delay(500);
+  delay(1000);
 }
 
 void holdObject() {
   clamp.write(100);
-  delay(500);
+  delay(1000);
 }
 
 void releaseObject(){
   clamp.write(50);
-  delay(500);
+  delay(1000);
 }
 
 void armAngle(int rotation){
   armJoint.write(rotation);
-  delay(500);
+  delay(1000);
 }
 
 void clampOrientation(int orientation){
   armRotation.write(orientation);  
+  delay(1000);
 }
 
 void initArm(){
@@ -50,7 +51,7 @@ void initArm(){
   armAngle(10);
   releaseObject();
 }
-
+s
 int echo(){
   long duration, distance;
   digitalWrite(trigPin, LOW);
