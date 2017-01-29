@@ -19,6 +19,14 @@ void setup() {
 }
 
 void loop() {
+  if(echo() < 10){
+      holdObject();
+      moveArm(90);
+      armAngle(30);
+      releaseObject();
+      armAngle(0);
+      moveArm(0);
+    }
 }
 
 void moveArm(int rotation) {
