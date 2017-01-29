@@ -1,6 +1,4 @@
 #include <Servo.h>
-#define trigPin 5
-#define echoPin 6
 
 Servo base;
 Servo clamp;
@@ -12,9 +10,6 @@ void setup() {
   clamp.attach(9);
   armJoint.attach(10);
   armRotation.attach(11);
-  pinMode(trigPin, OUTPUT);
-  pinMode(echoPin, INPUT);
-  Serial.begin(9600);
   initArm();
 }
 
@@ -49,17 +44,4 @@ void initArm(){
   moveArm(0);
   armAngle(10);
   releaseObject();
-}
-
-int echo(){
-  long duration, distance;
-  digitalWrite(trigPin, LOW);
-  delayMicroseconds(2);
-  digitalWrite(trigPin, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(trigPin, LOW);
-  duration = pulseIn(echoPin, HIGH);
-  distance = (duration/2) / 29.1;
-  Serial.println(distance);
-  return distance;  
 }
