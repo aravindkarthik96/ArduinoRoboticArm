@@ -21,6 +21,7 @@ void setup() {
 void loop() {
   if(echo() < 10){
       holdObject();
+      clampOrientation(0);
       moveArm(90);
       armAngle(30);
       releaseObject();
@@ -58,6 +59,7 @@ void initArm(){
   moveArm(0);
   armAngle(10);
   releaseObject();
+  clampOrientation(0);
 }
 
 int echo(){
